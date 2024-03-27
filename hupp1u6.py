@@ -73,7 +73,12 @@ E1_punkt_4m = np.exp(-1j*k*np.sqrt(R**2 +4**2))/np.sqrt(R**2 +4**2)  # Infalland
 E1_gauss    = E1_in_gauss*T_lins        # Fältet i Plan 1 (precis efter linsen) för gaussisk stråle
 E1_cirkular = E1_in_konst* T_lins * T_aperture     # Fältet i Plan 1 (precis efter linsen) för konstant fält som passerat genom cirkulär apertur *** Ej klar
 E1_punkt    = E1_punkt_4m * T_lins * -0.11189169331042044+0.22356262873773608j
-E1          = E1_gauss               # Välj fall!
+
+phases = np.random.uniform(0, 2*np.pi, (1024, 1024))
+amplitude = 1  
+E1_randon_phase = amplitude * np.exp(1j * phases)
+
+E1          = E1_punkt               # Välj fall!
 
 #Det ofarliga meddelandet
 
@@ -83,7 +88,7 @@ T_DOE = DOE[list(DOE.keys())[-1]]
 f_eye = 4
 T_eye = np.exp(-1j*k*R**2/(2*f_eye))  # Transmissionsfunktion för ögat (ögat är TOK)
 
-E_P = E1_in_konst * T_DOE * T_eye
+E_P = E1 * T_DOE * T_eye
 
 L = 20e-3
 cornea = PAS(E_P, L, N, a, lambda_noll, n_medium)         # Propagera med vår PAS funktion
@@ -98,6 +103,8 @@ image = plt.imshow(I2_norm, extent = [x_mm.min(), x_mm.max(), y_mm.min(), y_mm.m
 plt.colorbar(image)
 plt.show()
 
+
+
 #Det farliga meddelandet dvl=20mm
 
 DOE = np.flip(io.loadmat('C:\\Users\\karlf\\Desktop\\Optik\\HUPP1\\T_DOE_gen2.mat'))
@@ -108,7 +115,7 @@ T_eye = np.exp(-1j*k*R**2/(2*f_eye))  # Transmissionsfunktion för ögat (ögat 
 f_dvl = 20e-3
 T_dvl = np.exp(-1j*k*R**2/(2*f_dvl))  # Transmissionsfunktion för ögat (ögat är TOK)
 
-E_P = E1_in_konst * T_DOE * T_eye * T_dvl
+E_P = E1 * T_DOE * T_eye * T_dvl
 
 L = 20e-3
 cornea = PAS(E_P, L, N, a, lambda_noll, n_medium)         # Propagera med vår PAS funktion
@@ -122,6 +129,8 @@ plt.figure(2)
 image = plt.imshow(I2_norm, extent = [x_mm.min(), x_mm.max(), y_mm.min(), y_mm.max()])
 plt.colorbar(image)
 plt.show()
+
+
 
 #Det farliga meddelandet dvl=23mm
 
@@ -138,7 +147,7 @@ E_P = E1_in_konst * T_DOE * T_eye * T_dvl
 L = 20e-3
 cornea = PAS(E_P, L, N, a, lambda_noll, n_medium)         # Propagera med vår PAS funktion
 
-I2      = np.abs(cornea)**2 + 0.001
+I2      = np.abs(cornea)**2
 I2_norm = np.log(I2/np.max(I2))  # Log av den normaliserade intensiteten i plan 2
 x_mm = x*1e3
 y_mm = y*1e3
