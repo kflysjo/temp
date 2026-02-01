@@ -1,0 +1,159 @@
+!9/21/2005  10:31 AM	
+
+!NAME:xx	
+Var Vd(real) =0	
+BEGIN SWEEP	
+% Vg(real)  file_name(string) 	
+-8	knee_0
+-7	knee_1
+-6	knee_2
+-5	knee_3
+-4	knee_4
+-3	knee_5
+-2	knee_6
+-1	knee_7
+0	knee_8
+END	
+Var Vd(real) =1	
+BEGIN SWEEP	
+% Vg(real)  file_name(string) 	
+-8	knee_9
+-7	knee_10
+-6	knee_11
+-5	knee_12
+-4	knee_13
+-3	knee_14
+-2	knee_15
+-1	knee_16
+0	knee_17
+END	
+Var Vd(real) =2	
+BEGIN SWEEP	
+% Vg(real)  file_name(string) 	
+-8	knee_18
+-7	knee_19
+-6	knee_20
+-5	knee_21
+-4	knee_22
+-3	knee_23
+-2	knee_24
+-1	knee_25
+0	knee_26
+END	
+Var Vd(real) =3	
+BEGIN SWEEP	
+% Vg(real)  file_name(string) 	
+-8	knee_27
+-7	knee_28
+-6	knee_29
+-5	knee_30
+-4	knee_31
+-3	knee_32
+-2	knee_33
+-1	knee_34
+0	knee_35
+END	
+Var Vd(real) =4	
+BEGIN SWEEP	
+% Vg(real)  file_name(string) 	
+-8	knee_36
+-7	knee_37
+-6	knee_38
+-5	knee_39
+-4	knee_40
+-3	knee_41
+-2	knee_42
+-1	knee_43
+0	knee_44
+END	
+Var Vd(real) =5	
+BEGIN SWEEP	
+% Vg(real)  file_name(string) 	
+-8	knee_45
+-7	knee_46
+-6	knee_47
+-5	knee_48
+-4	knee_49
+-3	knee_50
+-2	knee_51
+-1	knee_52
+0	knee_53
+END	
+Var Vd(real) =7.5	
+BEGIN SWEEP	
+% Vg(real)  file_name(string) 	
+-8	saturation_9
+-7	saturation_10
+-6	saturation_11
+-5	saturation_12
+-4	saturation_13
+-3	saturation_14
+-2	saturation_15
+-1	saturation_16
+0	saturation_17
+END	
+Var Vd(real) =10	
+BEGIN SWEEP	
+% Vg(real)  file_name(string) 	
+-8	saturation_18
+-7	saturation_19
+-6	saturation_20
+-5	saturation_21
+-4	saturation_22
+-3	saturation_23
+-2	saturation_24
+-1	saturation_25
+0	saturation_26
+END	
+Var Vd(real) =12.5	
+BEGIN SWEEP	
+% Vg(real)  file_name(string) 	
+-8	saturation_27
+-7	saturation_28
+-6	saturation_29
+-5	saturation_30
+-4	saturation_31
+-3	saturation_32
+-2	saturation_33
+-1	saturation_34
+0	saturation_35
+END	
+Var Vd(real) =15	
+BEGIN SWEEP	
+% Vg(real)  file_name(string) 	
+-8	saturation_36
+-7	saturation_37
+-6	saturation_38
+-5	saturation_39
+-4	saturation_40
+-3	saturation_41
+-2	saturation_42
+-1	saturation_43
+0	saturation_44
+END	
+Var Vd(real) =17.5	
+BEGIN SWEEP	
+% Vg(real)  file_name(string) 	
+-8	saturation_45
+-7	saturation_46
+-6	saturation_47
+-5	saturation_48
+-4	saturation_49
+-3	saturation_50
+-2	saturation_51
+-1	saturation_52
+0	saturation_53
+END	
+Var Vd(real) =20	
+BEGIN SWEEP	
+% Vg(real)  file_name(string) 	
+-8	saturation_54
+-7	saturation_55
+-6	saturation_56
+-5	saturation_57
+-4	saturation_58
+-3	saturation_59
+-2	saturation_60
+-1	saturation_61
+0	saturation_62
+END	
