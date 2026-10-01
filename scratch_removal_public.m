@@ -1,7 +1,7 @@
 clc
 clear all
 
-
+patch_right_top = imread("film_right_top.jpg");
 full_grid = imread("film1_big.jpg");
 y1 = 1;
 y2 = 288;
@@ -30,10 +30,6 @@ channel_b = im2double(patch_mid_top(:,:,3));
 background_r = medfilt2(channel_r, filterSize_r, "symmetric");
 background_g = medfilt2(channel_g, filterSize_g, "symmetric");
 background_b = medfilt2(channel_b, filterSize_b, "symmetric");
-
-residual_r = channel_r - background_r;
-residual_g = channel_g - background_g;
-residual_b = channel_b - background_b;
 
 residual_r = abs(channel_r - background_r);
 residual_g = abs(channel_g - background_g);
@@ -231,9 +227,18 @@ for colorIndex = 1:3
     restored(:,:,colorIndex) = regionfill(original(:,:,colorIndex), repairMask);
 end
 
+% Visa masken som vita pixlar ovanpå originalbilden
+originalWithMask = original;
+
+for colorIndex = 1:3
+    channel = originalWithMask(:,:,colorIndex);
+    channel(repairMask) = 1;
+    originalWithMask(:,:,colorIndex) = channel;
+end
+
 
 figure;
-tiledlayout(1,3);
+tiledlayout(1,5);
 
 nexttile;
 imshow(original);
@@ -244,5 +249,13 @@ imshow(repairMask);
 title("Slutlig mask");
 
 nexttile;
+imshow(originalWithMask);
+title("Täckt original");
+
+nexttile;
 imshow(restored);
 title("Försök till restaurering");
+
+nexttile;
+imshow(patch_right_top);
+title("Deras restaurering");
